@@ -22,15 +22,27 @@
 }
 
 .store-locator .select-container select{
-      width: 100%;
+    width: 100%;
     height: 55px;
     /* background: url(../img/filter-dd.png) right center no-repeat #ececec; */
     padding: 0 20px;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
+    /* appearance: none; */
+    /* -moz-appearance: none;
+    -webkit-appearance: none; */
     font-size: 16px;
     font-family: Roboto;
     color: #6f7175;
     font-weight: 400;
 }
+
+.store-locator .select-container select:focus{
+  outline:none;
+  border:none;
+}
+
+
+
+
+
+
+
