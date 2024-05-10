@@ -63,12 +63,10 @@ class StoreLocator extends HTMLElement {
         if (catValue == "") {
             this.state.innerHTML = `<option value="">Select State</option>`
         } else {
-            console.log(catValue, "This is act value")
             const storeData = JSON.parse(sessionStorage.getItem("sheetData"))
             const myState = new Set();
             for (let index = 1; index < storeData.length; index++) {
                 if (catValue == storeData[index][1]) {
-                    console.log(storeData[index][3])
                     myState.add(storeData[index][3])
                 }
             }
@@ -85,28 +83,22 @@ class StoreLocator extends HTMLElement {
         if (stValue == "") {
             this.city.innerHtml = `<option value="">Select State</option>`
         } else {
-            console.log(stValue, "This is act value")
             const storeData = JSON.parse(sessionStorage.getItem("sheetData"))
             const myCity = new Map();
             for (let index = 1; index < storeData.length; index++) {
                 if (catValue == storeData[index][1] && stValue == storeData[index][3]) {
-                    console.log(storeData[index][4])
                     myCity.set(storeData[index][4], { name: storeData[index][2], address: storeData[index][8], phone: storeData[index][10]})
                 }
             }
-            console.log(myCity)
             let innerCt = '<option value="">Select City</option>'
             for (let [ct, more] of myCity) {
-                console.log(ct, more)
                 innerCt += `<option value="${ct}"  data-store-name="${more.name}" data-store-address="${more.address}" data-phone=${more.phone}>${ct}</option>`
             }
-            console.log(innerCt)
             this.city.innerHTML = innerCt
         }
     }
 
  updateData() {
-   console.log(this.querySelector("#slcity"))
         this.querySelector(".store-name").innerHTML = this.city.options[this.city.selectedIndex].dataset.storeName;
         this.querySelector(".store-location").innerHTML = this.city.options[this.city.selectedIndex].dataset.storeAddress
         this.querySelector(".city-state").innerHTML = this.state.value + ", " + this.city.value
