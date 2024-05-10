@@ -112,6 +112,10 @@ select:focus-visible{
   font-weight:600;
 }
 
+.no-found-message{
+  font-weight:600;
+}
+
 @media screen and (max-width:500px){
   .select-container{
     flex-direction:column;
