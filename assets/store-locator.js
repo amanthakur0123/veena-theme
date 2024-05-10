@@ -68,15 +68,16 @@ class StoreLocator extends HTMLElement {
         innerSt += `<option value="${st}">${st}</option>` 
         
       }
-      var doc = new DOMParser().parseFromString(innerSt, 'text/html')
-       this.state.appendChild(doc)
+      this.state.innerHtml = innerSt
+      // var doc = new DOMParser().parseFromString(innerSt, 'text/html')
+       // this.state.appendChild(doc)
     }
   }
 
 
   updateCity(stValue,catValue){
     if(stValue==""){
-      this.state.innerHtml = `<option value="">Select State</option>`
+      this.city.innerHtml = `<option value="">Select State</option>`
     }else{
       console.log(stValue , "This is act value")
         const storeData =  JSON.parse(sessionStorage.getItem("sheetData"))
