@@ -65,6 +65,8 @@ select:focus-visible{
     cursor: pointer;
     display: block;
     padding: 0;
+  outline:none;
+  border:none;
 }
 
 
