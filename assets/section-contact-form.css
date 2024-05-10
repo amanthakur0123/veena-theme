@@ -1,0 +1,93 @@
+.contact img {
+  max-width: 100%;
+}
+
+.contact__button button {
+  background-color: #d03c3f;
+}
+
+.contact__button button::after {
+  background-color: #000;
+}
+
+.flex {
+  display: flex;
+}
+
+.facebook-frst {
+  padding-left: 0 !important;
+}
+
+.flex-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.flex-box>* {
+  flex-basis: 100%;
+}
+
+@media screen and (min-width:426px) {
+  .flex-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .flex-box>* {
+    flex-basis: 50%;
+  }
+}
+
+.form-cart-dsc {
+  flex-basis: 25%;
+}
+
+.form-cart-dsc p {
+  color: #000;
+  margin: 0;
+}
+
+.form-cart-dsc div {
+  padding-bottom: 10px;
+}
+
+
+.contact .form__message {
+  align-items: flex-start;
+}
+
+.contact .icon-success {
+  margin-top: 0.2rem;
+}
+
+.contact .field {
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .contact .field {
+    margin-bottom: 2rem;
+  }
+}
+
+.contact__button {
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 750px) {
+  .contact__button {
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .contact__fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+  }
+}

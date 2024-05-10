@@ -1,0 +1,44 @@
+    .rich-text__heading {
+        margin: 20px 0;
+        font-size: 30px;
+        line-height: 39px;
+    }
+
+    @media screen and (min-width:999px) {
+        .rich-text__heading {
+            font-size: 52px;
+            line-height: 67.6px;
+        }
+    }
+
+    .rich-text__button-wrapper {
+        padding-top: 20px;
+    }
+
+    .rich-text__pre-heading {
+        font-weight: var(--font-body-weight);
+        font-size: 16px;
+        color: #000000cc;
+    }
+
+    .rich-text__wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .rich-text__wrapper--left {
+        justify-content: flex-start;
+    }
+
+    .rich-text__wrapper--right {
+        justify-content: flex-start;
+    }
+
+    .rich-text__button-wrapper .button {
+        background-color: #d03c3f;
+
+    }
+
+    .rich-text__button-wrapper .button::after {
+        background-color: #000;
+    }

@@ -1,0 +1,207 @@
+.product-card-image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.product-card-image-container {
+    /* border-radius: calc(var(--border-radius) - var(--border-width) - var(--image-padding)); */
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.product-card-image-container .secondary-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.product-card-image-container:hover .secondary-image {
+    visibility: visible;
+    opacity: 1;
+}
+
+.product-card-container a {
+    text-decoration: none;
+    color: #000;
+}
+
+.product-title a {
+    text-decoration: none;
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: calc(var(--font-body-scale) * 18px);
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    transition: all var(--duration-long) ease;
+}
+
+.product-title:hover a {
+    color: #d03c3f;
+}
+
+.swatch-box {
+    position: relative;
+    display: block !important;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    padding: 2px;
+}
+
+.varient-option form {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.varient-option form label[checked] {
+    color: #ff8c8c;
+}
+
+.product-card-container input:checked+div {
+    border-color: #d03c3f;
+}
+
+.swatch-box::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+.swatch-box:hover {
+    border-color: #d03c3f;
+}
+
+.product-price {
+    color: #000;
+    font-weight: 600;
+}
+
+.price-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-card-container .discount-price {
+    color: #fff;
+    background: #dd1d1d;
+    display: inline;
+    border-radius: var(--badge-corner-radius);
+    display: inline-block;
+    text-align: center;
+    font-size: calc(var(--font-body-scale) * 11px);
+    padding: 0.4rem 0.8rem;
+    word-break: break-word;
+    line-height: normal;
+}
+
+.swatches.center {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-card-container .swatches-name {
+    font-size: 8px;
+    word-wrap: break-word;
+}
+
+.product-card-container .product-tag {
+    color: #fff;
+    background: green;
+    display: inline;
+    border-radius: var(--badge-corner-radius);
+    display: inline-block;
+    text-align: center;
+    font-size: calc(var(--font-body-scale) * 11px);
+    padding: 0.4rem 0.8rem;
+    word-break: break-word;
+    line-height: normal;
+}
+
+.product-badge {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+    gap: 5px;
+}
+
+.product-badge-container {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    padding: 15px;
+}
+
+.product-badge-container .quick-look-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #000;
+    border-radius: var(--buttons-radius-outset);
+    overflow: hidden;
+    padding: 5px 15px;
+    min-width: 100%;
+    box-sizing: border-box;
+    min-height: 0;
+    font-size: calc(var(--font-body-scale) * 14px);
+    letter-spacing: 0;
+    font-weight: var(--font-body-weight-medium);
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.product-badge-container .quick-look-button span {
+    line-height: 25.2px;
+    z-index: 99;
+}
+
+.product-card-container .product-badge-container .quick-look-button::after {
+    border-radius: var(--buttons-radius-outset);
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #d03c3f;
+    transform: translateX(-100%);
+    scale: 1.3;
+    transition: all var(--duration-long) ease;
+}
+
+.product-card-container .product-badge-container .quick-look-button:hover::after {
+    transform: translateX(0%);
+}
+
+@media screen and (min-width: 750px) {
+    .product-card-container .product-badge-container .quick-look-button {
+        font-size: calc(var(--font-body-scale) * 14px);
+    }
+}

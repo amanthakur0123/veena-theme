@@ -1,0 +1,227 @@
+{{ 'custom-image-grid.css' | asset_url | stylesheet_tag }}
+
+{% assign media_option = section.settings.media_option %}
+
+{% style %}
+  @media screen and (min-width: 750px) {
+    .padding--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .padding--{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times:0.75 |  round:0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times:0.75 |  round:0 }}px;
+  }
+{% endstyle %}
+
+<div class="custom-image-grid padding--{{section.id}} padding--{{section.id}}">
+  <div class="page-width">
+    <div class="grid grid--1-col grid--{{section.settings.desktop_col}}-col-desktop {%if section.settings.desktop_col == 2 %} grid--{{section.settings.desktop_col}}-col-tablet{%endif%}">
+      {% for block in section.blocks %}
+        <div class="grid__item grid__item--relative grid__item--radius">
+          <div class="image-container">
+            {% render 'responsive-picture'
+              , desktopImage: block.settings.desktop_image
+              , mobileImage: block.settings.mobileImage
+              , class: media_option %}
+          </div>
+          <div class="grid-item__text grid grid-item__text--absolute grid-item--{{block.settings.content_position}} color-{{block.settings.color_scheme.id}}">
+            <div class="{{block.settings.content_alignment}}">
+              {% if block.settings.pre_heading %}
+                <div class="pre-heading h4 flex {{block.settings.content_alignment}}">
+                  <ul>
+                    <li>{{ block.settings.pre_heading }}</li>
+                  </ul>
+                </div>
+              {% endif %}
+              {% if block.settings.heading %}
+                <div class="heading h2">{{ block.settings.heading }}</div>
+              {% endif %}
+              {%- if block.settings.button_label != blank -%}
+                <a
+                  {% if block.settings.button_link == blank %}
+                  role="link"
+                  aria-disabled="true"
+                  {% else %}
+                  href="{{ block.settings.button_link }}"
+                  {% endif %}
+                  class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}">
+                  <span>{{- block.settings.button_label | escape -}}</span>
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Custom image grid",
+    "class": "image-grid section",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "select",
+        "label": "Media shape",
+        "default": "media media--square",
+        "id": "media_option",
+        "options": [
+          {
+            "value": "media media--square",
+            "label": "Square"
+          }, {
+            "value": "media media--portrait",
+            "label": "Portrait"
+          }, {
+            "value": "media media--landscape",
+            "label": "Landscape"
+          }, {
+            "value": "media--default",
+            "label": "default"
+          }
+        ]
+      }, {
+        "type": "range",
+        "label": "Number of column (Desktop)",
+        "id": "desktop_col",
+        "default": 2,
+        "min": 1,
+        "max": 4,
+        "step": 1
+      }, {
+        "type": "range",
+        "label": "Padding top",
+        "id": "padding_top",
+        "default": 0,
+        "min": 0,
+        "unit": "px",
+        "max": 100,
+        "step": 4
+      }, {
+        "type": "range",
+        "label": "Padding bottom",
+        "id": "padding_bottom",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Images",
+        "name": "Image cards",
+        "settings": [
+          {
+            "type": "image_picker",
+            "label": "Image",
+            "id": "desktop_image",
+            "info": "1440x600 recommanded"
+          },
+          {
+            "type": "image_picker",
+            "label": "Image (Mobile)",
+            "id": "mobile_image",
+            "info": "400x600 recommanded"
+          },
+          {
+            "type": "text",
+            "label": "Pre Heading",
+            "id": "pre_heading",
+            "default": "Caption"
+          },
+          {
+            "type": "text",
+            "label": "Heading",
+            "id": "heading",
+            "default": "Women's Clothing Collection"
+          }, {
+            "type": "text",
+            "id": "button_label",
+            "default": "Button label",
+            "label": "First button label",
+            "info": "leave the button blank to hide the button"
+          }, {
+            "type": "url",
+            "id": "button_link",
+            "label": "URL"
+          }, {
+            "type": "checkbox",
+            "id": "button_style_secondary",
+            "default": false,
+            "label": "Use outline button style"
+          }, {
+            "type": "color_scheme",
+            "label": "Color scheme",
+            "id": "color_scheme",
+            "default": "scheme-1"
+          }, {
+            "type": "select",
+            "label": "Content position",
+            "id": "content_position",
+            "options": [
+              {
+                "label": "Top Left",
+                "value": "top-left"
+              },
+              {
+                "label": "Top Center",
+                "value": "top-center"
+              },
+              {
+                "label": "Top Right",
+                "value": "top-right"
+              },
+              {
+                "label": "Middle Left",
+                "value": "middle-left"
+              }, {
+                "label": "Middle Center",
+                "value": "middle-center"
+              }, {
+                "label": "Middle-right",
+                "value": "middle-right"
+              }, {
+                "label": "Bottom Left",
+                "value": "bottom-left"
+              }, {
+                "label": "Bottom Center",
+                "value": "bottom-center"
+              }, {
+                "label": "Bottom Right",
+                "value": "bottom-right"
+              }
+            ]
+          }, {
+            "type": "select",
+            "label": "Content alignment",
+            "id": "content_alignment",
+            "default": "center",
+            "options": [
+              {
+                "label": "Left",
+                "value": "left"
+              }, {
+                "label": "Center",
+                "value": "center"
+              }, {
+                "label": "Right",
+                "value": "right"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom image grid"
+      }
+    ]
+  }
+{% endschema %}

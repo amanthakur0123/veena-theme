@@ -1,0 +1,146 @@
+<script src="{{'store-locator.js'| asset_url}}" defer></script>
+{{ 'store-locator.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .st-bg-color{
+    background-color:"{{section.settings.background_color}}"
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="st-bg-color store-locator">
+  <div class="page-width section-{{ section.id }}-padding">
+    <h2 class="page-title {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {%- if section.settings.page.title != blank -%}
+        {{ section.settings.heading_title | capitalize }}
+      {%- else -%}
+        {{ 'sections.page.title' | t }}
+      {%- endif -%}
+    </h2>
+    <store-locator>
+      <div class="select-container">
+        <label for="category">
+          <select name="slcatid" id="slcatid" onchange="findstatelist();">
+            <option value="">Select Category</option>
+            <option value="Air-Cooler">Air Cooler</option>
+            <option value="Delonghi-Group">Delonghi Group</option>
+            <option value="Eleganza">Eleganza</option>
+            <option value="Fans">Fans</option>
+            <option value="Home-Appliances">Home Appliances</option>
+            <option value="Lighting">Lighting</option>
+            <option value="Mahi-Cooler-Squad">Mahi Cooler Squad</option>
+            <option value="Orient-Smart-Shop">Orient Smart Shop</option>
+            <option value="Switchgear-And-Accessories">Switchgear And Accessories</option>
+            <option value="Water-Heater">Water Heater</option>
+          </select>
+        </label>
+        <label id="slstatelist">
+          <select name="slstate" id="slstate" onchange="findcitylist();">
+            <option value="">Select State</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="BIHAR">Bihar</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jammu - Kashmir">Jammu - Kashmir</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Pondicherry">Pondicherry</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana ">Telangana</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Uttrakhand ">Uttrakhand</option>
+            <option value="West Bengal">West Bengal</option>
+          </select>
+        </label>
+        <label id="citylist">
+          <select name="slcity" id="slcity">
+            <option value="">Select City</option>
+            <option value="Ambala">Ambala</option>
+            <option value="Jassur">Jassur</option>
+          </select>
+        </label>
+        <label>
+          <button type="submit" class="" onclick="viewlist();">Go</button>
+        </label>
+      </div>
+    </store-locator>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "store-locator",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h0",
+          "label": "Large"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h2",
+          "label": "Small"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading Size"
+    },
+    {
+      "type": "text",
+      "label": "Heading title",
+      "id": "heading_title",
+      "default": "Dealers"
+    },
+    {
+      "type": "header",
+      "content": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "color",
+      "default": "#fff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store locator"
+    }
+  ]
+}
+{% endschema %}
