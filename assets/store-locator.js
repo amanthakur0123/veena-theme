@@ -87,7 +87,7 @@ class StoreLocator extends HTMLElement {
        let innerCt = '<option value="">Select City</option>'
       for (let [ct,more] of myCity) {
         console.log(ct,more)
-        innerCt += `<option value="${ct}"  data-store-name=${more.name} data-store-address=${more.address}>${ct}</option>` 
+        innerCt += `<option value="${ct}"  data-store-name="${more.name}" data-store-address="${more.address}">${ct}</option>` 
       }
       console.log(innerCt)
      this.city.innerHTML = innerCt
