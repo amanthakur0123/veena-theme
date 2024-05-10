@@ -7,7 +7,6 @@ class StoreLocator extends HTMLElement {
       this.sheetData();
         this.category = this.querySelector("#slcatid")
         this.state = this.querySelector("#slstate")
-      console.log( document.querySelector("#slstate") )
         this.city = this.querySelector("#slcity")
         if (this.category.value == "") {
             this.state.innerHTML = `<option value="">Select State</option>`
@@ -62,7 +61,7 @@ class StoreLocator extends HTMLElement {
         innerSt += `<option value="${st}">${st}</option>` 
         console.log(st)
       }
-       this.state.innerHtml = innerSt
+       document.querySelector("#slstate").innerHtml = innerSt
     }
   }
 }
