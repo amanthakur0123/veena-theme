@@ -110,7 +110,7 @@ class StoreLocator extends HTMLElement {
         this.querySelector(".store-name").innerHTML = this.city.options[this.city.selectedIndex].dataset.storeName;
         this.querySelector(".store-location").innerHTML = this.city.options[this.city.selectedIndex].dataset.storeAddress
         this.querySelector(".city-state").innerHTML = this.state.value + ", " + this.city.value
-        this.querySelector(".phone-no").innerHTML = this.city.options[this.city.selectedIndex].dataset.phone
+        this.querySelector(".phone-no span").innerHTML = this.city.options[this.city.selectedIndex].dataset.phone
         this.storeLocation.classList.remove("hidden")
         this.noFoundMessage.classList.add("hidden")
     }
