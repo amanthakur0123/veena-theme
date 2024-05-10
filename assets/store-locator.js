@@ -19,20 +19,9 @@ class StoreLocator extends HTMLElement {
             this.city.innerHTML = `<option value="">Select State</option>`
         }
 
-        this.addEventListener('change', (e) => {
-            if (this.category.value == "") {
-                this.state.innerHTML = `<option value="">Select State</option>`
-            }else{
-              this.state.innerHTML = `<option value="">Select State</option>
-                                        <option value="Lo">Lo</option>`
-            }
-            if (this.state.value == "") {
-                this.city.innerHTML = `<option value="">Select City</option>`
-            }else{
-              this.city.innerHTML = `<option value="">Select City</option>
-                                      <option value="lo">lo</option>`
-            }
-        })
+     this.category.addEventListener("change",(e)=>{
+       this.updateState(e.target.value);
+     })
     }
 
   sheetData(){
@@ -50,7 +39,6 @@ class StoreLocator extends HTMLElement {
     const storeData =  JSON.parse(sessionStorage.getItem("sheetData"))
     const category = new Set();
     for (let index = 1; index < storeData.length; index++) {
-      // console.log( "my data --> ",storeData[index])
       category.add(storeData[index][1])
     }
     let innerCat = '<option value="">Select State</option>'
@@ -61,12 +49,18 @@ class StoreLocator extends HTMLElement {
     console.log(innerCat)
   }
 
-  findstatelist(){
-    console.log("Hii")
-  }
-
-  findcitylist(){
-    console.log("Hello")
+  updateState(catValue){
+    if(catValue==""){
+      this.state.innerHtml = `<option value="">Select State</option>`
+    }else{
+      const storeData =  JSON.parse(sessionStorage.getItem("sheetData"))
+      const state = new Set();
+    for (let index = 1; index < storeData.length; index++) {
+      if(catValue == storeData[index][1]){
+        state.add(storeData[index][2])
+      }
+    }
+    }
   }
 }
 
