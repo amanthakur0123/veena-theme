@@ -39,7 +39,8 @@
 
 .store-locator .select-container 
 select:focus,
-select:active{
+select:active,
+select:focus-visible{
   outline:none;
   border:none;
 }
