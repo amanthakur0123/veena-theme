@@ -62,7 +62,7 @@ class StoreLocator extends HTMLElement {
       state = Array.from(state).sort();
        let innerSt = '<option value="">Select State</option>'
       for (let st of state) {
-        innerSt += `<option value="${cat}">${cat}</option>` 
+        innerSt += `<option value="${st}">${st}</option>` 
         console.log(st)
       }
        this.state.innerHtml = innerSt
