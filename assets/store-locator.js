@@ -69,8 +69,6 @@ class StoreLocator extends HTMLElement {
         
       }
       this.state.innerHTML = innerSt
-      // var doc = new DOMParser().parseFromString(innerSt, 'text/html')
-       // this.state.appendChild(doc)
     }
   }
 
@@ -95,7 +93,7 @@ class StoreLocator extends HTMLElement {
         console.log("Aman")
         innerCt += `<option value="${ct}">${ct}</option>` 
       }
-      console.log(innerSt)
+      console.log(innerCt)
      this.city.innerHTML = innerCt
     }
   }
