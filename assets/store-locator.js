@@ -49,14 +49,14 @@ class StoreLocator extends HTMLElement {
     }else{
       console.log(catValue , "This is act value")
         const storeData =  JSON.parse(sessionStorage.getItem("sheetData"))
-        let state = new Set();
+        let myState = new Set();
         for (let index = 1; index < storeData.length; index++) {
           if(catValue == storeData[index][1]){
-          state.add(storeData[index][3])
+          myState.add(storeData[index][3])
           }
         }
        let innerSt = '<option value="">Select State</option>'
-      for (let st of state) {
+      for (let st of myState) {
         console.log("Aman")
         innerSt += `<option value="${st}">${st}</option>` 
       }
