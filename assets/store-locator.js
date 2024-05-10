@@ -74,7 +74,7 @@ class StoreLocator extends HTMLElement {
 
 
   updateCity(stValue,catValue){
-    console.log(stValue,catValue)
+    console.log("this is inner -->", stValue,catValue)
     if(stValue==""){
       this.city.innerHtml = `<option value="">Select State</option>`
     }else{
