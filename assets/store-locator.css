@@ -94,6 +94,10 @@ select:focus-visible{
     line-height: 1;
 }
 
+.store-locator .store-location-details .info{
+      padding: 15px 25px 20px;
+}
+
 
 
 
