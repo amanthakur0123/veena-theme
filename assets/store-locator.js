@@ -25,7 +25,6 @@ class StoreLocator extends HTMLElement {
           this.city.innerHTML = `<option value="">Select City</option>`
            this.noFoundMessage.classList.remove("hidden")
            this.storeLocation.classList.add("hidden")
-          this.
             this.updateState(e.target.value);
         })
 
