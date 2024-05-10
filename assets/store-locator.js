@@ -6,7 +6,7 @@ class StoreLocator extends HTMLElement {
       this.apiKey = "AIzaSyA_3tdEwUgl8_rFzSi7hILRYYhdxNCOBGo"
       this.sheetKey = "1Oe1d0Bzy7vIzM7peE_qzP2f2KxarfLpQCQOY5s-SpoU"
        this.sheetUrl = "https://sheets.googleapis.com/v4/spreadsheets/" + this.sheetKey + "/values/Sheet1?key=" + this.apiKey;
-      console.log(sheetUrl)
+      console.log(this.sheetUrl)
         this.category = this.querySelector("#slcatid")
         this.state = this.querySelector("#slstate")
         this.city = this.querySelector("#slcity")
