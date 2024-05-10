@@ -7,13 +7,13 @@ class StoreLocator extends HTMLElement {
       this.sheetData();
         this.category = this.querySelector("#slcatid")
         this.state = this.querySelector("#slstate")
-      console.log( this.state )
+      console.log( document.querySelector("#slstate") )
         this.city = this.querySelector("#slcity")
         if (this.category.value == "") {
             this.state.innerHTML = `<option value="">Select State</option>`
         }
         if (this.state.value == "") {
-            this.city.innerHTML = `<option value="">Select State</option>`
+            this.city.innerHTML = `<option value="">Select City</option>`
         }
 
      this.category.addEventListener("change",(e)=>{
