@@ -68,8 +68,7 @@ class StoreLocator extends HTMLElement {
         innerSt += `<option value="${st}">${st}</option>` 
         
       }
-      console.log(innerSt)
-       this.state.innerHtm.innerHtml = innerSt
+       this.state.innerHtml = innerSt
     }
   }
 
@@ -88,15 +87,14 @@ class StoreLocator extends HTMLElement {
           }
         }
       console.log("DAta")
-      console.log(myState)
-       let innerSt = '<option value="">Select State</option>'
-      for (let st of myState) {
+      console.log(myCity)
+       let innerCt = '<option value="">Select State</option>'
+      for (let ct of myCity) {
         console.log("Aman")
-        innerSt += `<option value="${st}">${st}</option>` 
-        
+        innerCt += `<option value="${ct}">${ct}</option>` 
       }
       console.log(innerSt)
-       this.state.innerHtm.innerHtml = innerSt
+       this.city.innerHtml = innerCt
     }
   }
 
