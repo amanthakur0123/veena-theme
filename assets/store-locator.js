@@ -46,7 +46,6 @@ class StoreLocator extends HTMLElement {
       innerCat += `<option value="${cat}">${cat}</option>` 
     }
     this.category.innerHtml = innerCat
-    console.log(innerCat)
   }
 
   updateState(catValue){
@@ -61,9 +60,12 @@ class StoreLocator extends HTMLElement {
           }
         }
       state = Array.from(state).sort();
+       let innerSt = '<option value="">Select State</option>'
       for (let st of state) {
+        innerSt += `<option value="${cat}">${cat}</option>` 
         console.log(st)
       }
+       this.state.innerHtml = innerSt
     }
   }
 }
