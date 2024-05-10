@@ -88,7 +88,6 @@ select:focus-visible{
     padding: 15px 25px;
     background-color: #e85a29;
     font-size: 22px;
-    font-family: 'Roboto Condensed';
     font-weight: 400;
     color: #fff;
     line-height: 1;
@@ -107,6 +106,10 @@ select:focus-visible{
 
 .store-locator .store-location{
   border-bottom:2px solid #ccc;
+}
+
+.store-locator .phone-no  span{
+  color:#ccc;
 }
 
 
