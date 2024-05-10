@@ -23,7 +23,7 @@
   <div class="page-width section-{{ section.id }}-padding">
     <h2 class="page-title {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       {%- if section.settings.heading != blank -%}
-        {{ section.settings.heading | capitalize }}
+        {{ section.settings.heading | upcase }}
       {%- endif -%}
     </h2>
     <store-locator>
