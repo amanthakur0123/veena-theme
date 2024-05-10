@@ -44,12 +44,12 @@ class StoreLocator extends HTMLElement {
     for (let cat of category) {
       innerCat += `<option value="${cat}">${cat}</option>` 
     }
-    this.category.innerHtml = innerCat
+    this.category.innerHTML = innerCat
   }
 
   updateState(catValue){
     if(catValue==""){
-      this.state.innerHtml = `<option value="">Select State</option>`
+      this.state.innerHTML = `<option value="">Select State</option>`
     }else{
       console.log(catValue , "This is act value")
         const storeData =  JSON.parse(sessionStorage.getItem("sheetData"))
@@ -68,7 +68,7 @@ class StoreLocator extends HTMLElement {
         innerSt += `<option value="${st}">${st}</option>` 
         
       }
-      this.state.innerHtml = innerSt
+      this.state.innerHTML = innerSt
       // var doc = new DOMParser().parseFromString(innerSt, 'text/html')
        // this.state.appendChild(doc)
     }
@@ -88,7 +88,6 @@ class StoreLocator extends HTMLElement {
             myCity.add(storeData[index][4])
           }
         }
-      console.log("DAta")
       console.log(myCity)
        let innerCt = '<option value="">Select State</option>'
       for (let ct of myCity) {
@@ -96,8 +95,7 @@ class StoreLocator extends HTMLElement {
         innerCt += `<option value="${ct}">${ct}</option>` 
       }
       console.log(innerSt)
-      var doc = new DOMParser().parseFromString(innerCt, 'text/html')
-       this.city.appendChild(doc) 
+     this.city.innerHTML = innerCt
     }
   }
 
