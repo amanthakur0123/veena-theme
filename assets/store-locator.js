@@ -8,10 +8,10 @@ class StoreLocator extends HTMLElement {
         this.category = this.querySelector("#slcatid")
         this.state = this.querySelector("#slstate")
         this.city = this.querySelector("#slcity")
-
-        this.querySelector("#goSubmitButton").addEventListener("click", this.updateData.bind(this))
-
-
+      
+        this.querySelector("#goSubmitButton").addEventListener("click",this.updateData.bind(this))
+        
+      
         if (this.category.value == "") {
             this.state.innerHTML = `<option value="">Select State</option>`
         }
@@ -91,15 +91,14 @@ class StoreLocator extends HTMLElement {
             let innerCt = '<option value="">Select City</option>'
             for (let [ct, more] of myCity) {
                 console.log(ct, more)
-                innerCt += `<option value="${ct}"  data-store-name="${more.name}" data-store-address="${more.address}"  
-                data-phone="${more.phone}">${ct}</option>`
+                innerCt += `<option value="${ct}"  data-store-name="${more.name}" data-store-address="${more.address}" data-phone=${more.phone}>${ct}</option>`
             }
             console.log(innerCt)
             this.city.innerHTML = innerCt
         }
     }
 
-    updateData() {
+ updateData() {
         this.querySelector(".store-name").innerHTML = this.city.dataset.storeName;
         this.querySelector(".store-location").innerHTML = this.city.dataset.storeAddress
         this.querySelector(".city-state").innerHTML = this.state.value + ", " + this.city.value
@@ -107,3 +106,5 @@ class StoreLocator extends HTMLElement {
     }
 
 }
+
+customElements.define("store-locator", StoreLocator)
