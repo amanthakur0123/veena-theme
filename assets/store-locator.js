@@ -8,7 +8,8 @@ class StoreLocator extends HTMLElement {
         this.category = this.querySelector("#slcatid")
         this.state = this.querySelector("#slstate")
         this.city = this.querySelector("#slcity")
-      
+        this.noFoundMessage = this.querySelector("#no-found")
+        this.storeLocation = this.querySelector("#store-location")
         this.querySelector("#goSubmitButton").addEventListener("click",this.updateData.bind(this))
         
       
@@ -20,10 +21,18 @@ class StoreLocator extends HTMLElement {
         }
 
         this.category.addEventListener("change", (e) => {
+          this.state.innerHTML = `<option value="">Select State</option>`
+          this.city.innerHTML = `<option value="">Select City</option>`
+           this.noFoundMessag.classList.remove("hidden")
+           this.storeLocation.classList.add("hidden")
+          this.
             this.updateState(e.target.value);
         })
 
         this.state.addEventListener("change", (e) => {
+          this.city.innerHTML = `<option value="">Select City</option>`
+           this.noFoundMessag.classList.remove("hidden")
+           this.storeLocation.classList.add("hidden")
             this.updateCity(e.target.value, this.category.value);
         })
     }
@@ -74,7 +83,6 @@ class StoreLocator extends HTMLElement {
 
 
     updateCity(stValue, catValue) {
-        console.log("this is inner -->", stValue, catValue)
         if (stValue == "") {
             this.city.innerHtml = `<option value="">Select State</option>`
         } else {
@@ -104,6 +112,8 @@ class StoreLocator extends HTMLElement {
         this.querySelector(".store-location").innerHTML = this.city.options[this.city.selectedIndex].dataset.storeAddress
         this.querySelector(".city-state").innerHTML = this.state.value + ", " + this.city.value
         this.querySelector(".phone-no").innerHTML = this.city.options[this.city.selectedIndex].dataset.phone
+        this.storeLocation.classList.remove("hidden")
+        this.noFoundMessag.classList.add("hidden")
     }
 
 }
