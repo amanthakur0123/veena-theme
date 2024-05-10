@@ -50,8 +50,11 @@ class StoreLocator extends HTMLElement {
     const storeData =  JSON.parse(sessionStorage.getItem("sheetData"))
     const category = new Set();
     for (let index = 1; index < storeData.length; index++) {
-      console.log( "my data --> ",storeData[index])
+      // console.log( "my data --> ",storeData[index])
       category.add(storeData[index][1])
+    }
+    for (let cat of category) {
+      console.log(cat)
     }
   }
 
