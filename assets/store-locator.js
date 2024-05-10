@@ -24,7 +24,6 @@ class StoreLocator extends HTMLElement {
      fetch(this.sheetUrl).
        then(resp=>resp.json())
         .then(res=> {
-          console.log(res.values)
           sessionStorage.setItem("sheetData", JSON.stringify(res.values));
           this.updateSelectBox();
         })
