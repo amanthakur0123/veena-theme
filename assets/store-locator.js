@@ -18,6 +18,10 @@ class StoreLocator extends HTMLElement {
      this.category.addEventListener("change",(e)=>{
        this.updateState(e.target.value);
      })
+
+       this.state.addEventListener("change",(e)=>{
+       this.updateCity(e.target.value,this.category.value);
+     })
     }
 
   sheetData(){
@@ -68,6 +72,36 @@ class StoreLocator extends HTMLElement {
        this.state.innerHtm.innerHtml = innerSt
     }
   }
+
+
+  updateCity(stValue,catValue){
+    if(stValue==""){
+      this.state.innerHtml = `<option value="">Select State</option>`
+    }else{
+      console.log(stValue , "This is act value")
+        const storeData =  JSON.parse(sessionStorage.getItem("sheetData"))
+        const myCity = new Set();
+        for (let index = 1; index < storeData.length; index++) {
+          if(catValue == storeData[index][1] && stValue==storeData[index][3]){
+            console.log(storeData[index][4])
+            myCity.add(storeData[index][4])
+          }
+        }
+      console.log("DAta")
+      console.log(myState)
+       let innerSt = '<option value="">Select State</option>'
+      for (let st of myState) {
+        console.log("Aman")
+        innerSt += `<option value="${st}">${st}</option>` 
+        
+      }
+      console.log(innerSt)
+       this.state.innerHtm.innerHtml = innerSt
+    }
+  }
+
+
+  
 }
 
 customElements.define("store-locator", StoreLocator)
