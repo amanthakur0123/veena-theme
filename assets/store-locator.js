@@ -44,7 +44,7 @@ class StoreLocator extends HTMLElement {
         for (let index = 1; index < storeData.length; index++) {
             category.add(storeData[index][1])
         }
-        let innerCat = '<option value="">Select category</option>'
+        let innerCat = '<option value="">Select Category</option>'
         for (let cat of category) {
             innerCat += `<option value="${cat}">${cat}</option>`
         }
