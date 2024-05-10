@@ -66,9 +66,9 @@ select:focus-visible{
   border:none;
 }
 
-.store-locator .no-found-message{
+/* .store-locator .no-found-message{
   display:none;
-}
+} */
 
 
 .store-locator .store-location-details{
