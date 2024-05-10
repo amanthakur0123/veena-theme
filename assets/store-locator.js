@@ -84,7 +84,7 @@ class StoreLocator extends HTMLElement {
             for (let index = 1; index < storeData.length; index++) {
                 if (catValue == storeData[index][1] && stValue == storeData[index][3]) {
                     console.log(storeData[index][4])
-                    myCity.set(storeData[index][4], { name: storeData[index][2], address: storeData[index][8] })
+                    myCity.set(storeData[index][4], { name: storeData[index][2], address: storeData[index][8], phone: storeData[index][10]})
                 }
             }
             console.log(myCity)
@@ -99,10 +99,10 @@ class StoreLocator extends HTMLElement {
     }
 
  updateData() {
-        this.querySelector(".store-name").innerHTML = this.city.dataset.storeName;
-        this.querySelector(".store-location").innerHTML = this.city.dataset.storeAddress
-        this.querySelector(".city-state").innerHTML = this.state.value + ", " + this.city.value
-        this.querySelector(".phone-no").innerHTML = this.city.dataset.phone
+        this.querySelector(".store-name").innerHTML = this.querySelector("#slcity").dataset.storeName;
+        this.querySelector(".store-location").innerHTML = this.querySelector("#slcity").dataset.storeAddress
+        this.querySelector(".city-state").innerHTML = this.querySelector("#slcity").value + ", " + this.querySelector("#slcity").value
+        this.querySelector(".phone-no").innerHTML = this.querySelector("#slcity").dataset.phone
     }
 
 }
