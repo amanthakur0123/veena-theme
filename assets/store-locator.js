@@ -1,6 +1,9 @@
 class StoreLocator extends HTMLElement {
     constructor() {
         super();
+      this.sheetData();
+      
+      
         this.category = this.querySelector("#slcatid")
         this.state = this.querySelector("#slstate")
         this.city = this.querySelector("#slcity")
@@ -27,6 +30,10 @@ class StoreLocator extends HTMLElement {
             }
         })
     }
+
+  sheetData(){
+    console.log("Aman")
+  }
 
   findstatelist(){
     console.log("Hii")
