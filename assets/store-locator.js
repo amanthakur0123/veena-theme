@@ -15,9 +15,15 @@ class StoreLocator extends HTMLElement {
         this.addEventListener('change', (e) => {
             if (this.category.value == "") {
                 this.state.innerHTML = `<option value="">Select State</option>`
+            }else{
+              this.state.innerHTML = `<option value="">Select State</option>
+                                        <option value="">Lo</option>`
             }
             if (this.state.value == "") {
                 this.city.innerHTML = `<option value="">Select State</option>`
+            }else{
+              this.city.innerHTML = `<option value="">Select State</option>
+                                      <option value="">lo</option>`
             }
         })
     }
