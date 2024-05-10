@@ -57,7 +57,7 @@ class StoreLocator extends HTMLElement {
       const state = new Set();
     for (let index = 1; index < storeData.length; index++) {
       if(catValue == storeData[index][1]){
-        state.add(storeData[index][2])
+        state.add(storeData[index][3])
       }
     }
     }
