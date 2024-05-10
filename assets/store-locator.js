@@ -1,7 +1,7 @@
 class StoreLocator extends HTMLElement {
     constructor() {
         super();
-        this.sheetData();
+        // this.sheetData();
     
       this.apiKey = "AIzaSyA_3tdEwUgl8_rFzSi7hILRYYhdxNCOBGo"
       this.sheetKey = "1Oe1d0Bzy7vIzM7peE_qzP2f2KxarfLpQCQOY5s-SpoU"
