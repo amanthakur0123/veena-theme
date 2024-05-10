@@ -7,6 +7,13 @@
     text-transform: uppercase;
 }
 
+
+.select-container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
 .store-locator .select-container select{
       width: 100%;
     height: 55px;
