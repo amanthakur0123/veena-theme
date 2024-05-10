@@ -116,6 +116,11 @@ select:focus-visible{
   .select-container{
     flex-direction:column;
   }
+
+  .store-locator label {
+    width:unset;
+    margin-block: 10px 0;
+  }
 }
 
 
