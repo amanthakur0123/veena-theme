@@ -9,7 +9,6 @@ class StoreLocator extends HTMLElement {
         this.state = this.querySelector("#slstate")
         this.city = this.querySelector("#slcity")
         this.noFoundMessage= this.querySelector("#no-found")
-      co
         this.storeLocation = this.querySelector("#store-location")
         this.querySelector("#goSubmitButton").addEventListener("click",this.updateData.bind(this))
         
