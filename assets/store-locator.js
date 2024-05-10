@@ -53,13 +53,16 @@ class StoreLocator extends HTMLElement {
     if(catValue==""){
       this.state.innerHtml = `<option value="">Select State</option>`
     }else{
-      const storeData =  JSON.parse(sessionStorage.getItem("sheetData"))
-      const state = new Set();
-    for (let index = 1; index < storeData.length; index++) {
-      if(catValue == storeData[index][1]){
-        state.add(storeData[index][3])
+        const storeData =  JSON.parse(sessionStorage.getItem("sheetData"))
+        const state = new Set();
+        for (let index = 1; index < storeData.length; index++) {
+          if(catValue == storeData[index][1]){
+          state.add(storeData[index][3])
+          }
+        }
+      for (let st of state) {
+        console.log(st)
       }
-    }
     }
   }
 }
