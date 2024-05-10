@@ -33,6 +33,8 @@
     font-family: Roboto;
     color: #6f7175;
     font-weight: 400;
+  border:none;
+  background:#ececec;
 }
 
 .store-locator .select-container select:focus{
