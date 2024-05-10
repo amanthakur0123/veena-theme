@@ -8,7 +8,6 @@ class StoreLocator extends HTMLElement {
         this.category = this.querySelector("#slcatid")
         this.state = this.querySelector("#slstate")
         this.city = this.querySelector("#slcity")
-        
         if (this.category.value == "") {
             this.state.innerHTML = `<option value="">Select State</option>`
         }
