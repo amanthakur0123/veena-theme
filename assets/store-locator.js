@@ -40,8 +40,17 @@ class StoreLocator extends HTMLElement {
        then(resp=>resp.json())
         .then(res=> {
           console.log(res.values)
+          sessionStorage.setItem("sheetData", JSON.stringify(res.values));
+          this.updateSelectBox();
         })
           .catch(err=> console.log(err))
+  }
+
+  updateSelectBox(){
+    const storeData =  JSON.parse(sessionStorage.getItem("sheetData"))
+    console.log(storeData)
+    const category = new Set();
+    
   }
 
   findstatelist(){
