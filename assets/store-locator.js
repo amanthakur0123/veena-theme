@@ -29,7 +29,7 @@ class StoreLocator extends HTMLElement {
             if (this.state.value == "") {
                 this.city.innerHTML = `<option value="">Select State</option>`
             }else{
-              this.city.innerHTML = `<option value="">Select State</option>
+              this.city.innerHTML = `<option value="">Select City</option>
                                       <option value="lo">lo</option>`
             }
         })
@@ -38,7 +38,9 @@ class StoreLocator extends HTMLElement {
   sheetData(){
      fetch(this.sheetUrl).
        then(resp=>resp.json())
-        .then(res=> console.log(res))
+        .then(res=> {
+          res.value
+        })
           .catch(err=> console.log(err))
   }
 
