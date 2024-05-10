@@ -21,6 +21,14 @@ class StoreLocator extends HTMLElement {
             }
         })
     }
+
+  findstatelist(){
+    console.log("Hii")
+  }
+
+  findcitylist(){
+    console.log("Hello")
+  }
 }
 
 customElements.define("store-locator", StoreLocator)
