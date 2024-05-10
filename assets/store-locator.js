@@ -76,7 +76,7 @@ class StoreLocator extends HTMLElement {
     }else{
       console.log(stValue , "This is act value")
         const storeData =  JSON.parse(sessionStorage.getItem("sheetData"))
-        const myCity = new map();
+        const myCity = new Map();
         for (let index = 1; index < storeData.length; index++) {
           if(catValue == storeData[index][1] && stValue==storeData[index][3]){
             console.log(storeData[index][4])
