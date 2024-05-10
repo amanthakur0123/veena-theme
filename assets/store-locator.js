@@ -48,7 +48,7 @@ class StoreLocator extends HTMLElement {
 
   updateSelectBox(){
     const storeData =  JSON.parse(sessionStorage.getItem("sheetData"))
-    for (let index = 1; index < storeData.length; index++) {
+    for (let index = 0; index < storeData.length; index++) {
       console.log( "my data --> ",storeData[index])
     }
     const category = new Set();
