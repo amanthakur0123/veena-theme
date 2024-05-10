@@ -105,6 +105,10 @@ select:focus-visible{
 }
 
 
+.store-locator .store-location{
+  border-bottom:2px solid #ccc;
+}
+
 
 
 
