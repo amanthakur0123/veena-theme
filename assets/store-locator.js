@@ -46,8 +46,9 @@ class StoreLocator extends HTMLElement {
   }
 
   updateState(catValue){
-    console.log(catValue , "This is act value")
+    
     if(catValue==""){
+      console.log(catValue , "This is act value")
       this.state.innerHtml = `<option value="">Select State</option>`
     }else{
         const storeData =  JSON.parse(sessionStorage.getItem("sheetData"))
