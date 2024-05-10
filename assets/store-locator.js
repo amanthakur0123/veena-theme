@@ -68,8 +68,8 @@ class StoreLocator extends HTMLElement {
         innerSt += `<option value="${st}">${st}</option>` 
         
       }
-       document.getElementById("slstate").innerHtml = innerSt
-      document.getElementById("slcity").innerHtml = innerSt
+      var doc = new DOMParser().parseFromString(innerSt, 'text/html')
+       this.state.appendChild(doc)
     }
   }
 
@@ -95,7 +95,8 @@ class StoreLocator extends HTMLElement {
         innerCt += `<option value="${ct}">${ct}</option>` 
       }
       console.log(innerSt)
-       this.city.innerHtml = innerCt
+      var doc = new DOMParser().parseFromString(innerCt, 'text/html')
+       this.city.appendChild(doc) 
     }
   }
 
