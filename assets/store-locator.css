@@ -74,6 +74,7 @@ select:focus-visible{
 
 .store-locator .store-location-details{
   display:flex;
+  flex-direction:column;
   max-width:400px;
   width:100%;
 }
