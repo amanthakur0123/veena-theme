@@ -17,13 +17,13 @@ class StoreLocator extends HTMLElement {
                 this.state.innerHTML = `<option value="">Select State</option>`
             }else{
               this.state.innerHTML = `<option value="">Select State</option>
-                                        <option value="">Lo</option>`
+                                        <option value="Lo">Lo</option>`
             }
             if (this.state.value == "") {
                 this.city.innerHTML = `<option value="">Select State</option>`
             }else{
               this.city.innerHTML = `<option value="">Select State</option>
-                                      <option value="">lo</option>`
+                                      <option value="lo">lo</option>`
             }
         })
     }
