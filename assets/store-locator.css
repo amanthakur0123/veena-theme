@@ -121,6 +121,10 @@ select:focus-visible{
     width:unset;
     margin-block: 10px 0;
   }
+
+  .store-locator label:nth-child(4) {
+    width: unset;
+}
 }
 
 
