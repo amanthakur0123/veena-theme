@@ -80,25 +80,23 @@ class StoreLocator extends HTMLElement {
     }else{
       console.log(stValue , "This is act value")
         const storeData =  JSON.parse(sessionStorage.getItem("sheetData"))
-        const myCity = new Set();
+        const myCity = new map();
         for (let index = 1; index < storeData.length; index++) {
           if(catValue == storeData[index][1] && stValue==storeData[index][3]){
             console.log(storeData[index][4])
-            myCity.add(storeData[index][4])
+            myCity.set(storeData[index][4],{name:storeData[index][2],address:storeData[index][8]})
           }
         }
       console.log(myCity)
        let innerCt = '<option value="">Select City</option>'
-      for (let ct of myCity) {
-        console.log("Aman")
-        innerCt += `<option value="${ct}">${ct}</option>` 
+      for (let [ct,more] of myCity) {
+        console.log(ct,more)
+        innerCt += `<option value="${ct}"  data-store-name=`${more.name}` data-store-address=`${more.address}`>${ct}</option>` 
       }
       console.log(innerCt)
      this.city.innerHTML = innerCt
     }
   }
-
-
   
 }
 
