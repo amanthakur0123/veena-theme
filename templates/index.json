@@ -1,5 +1,14 @@
 {
   "sections": {
+    "store_locator_8KdPjz": {
+      "type": "store-locator",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "heading_title": "Dealers",
+        "background_color": "#fff"
+      }
+    },
     "slideshow_hero_banner_a49bzY": {
       "type": "slideshow-hero-banner",
       "blocks": {
@@ -692,6 +701,7 @@
     }
   },
   "order": [
+    "store_locator_8KdPjz",
     "slideshow_hero_banner_a49bzY",
     "custom_rich_text_P7GrWY",
     "custom_image_grid_6hkF77",
