@@ -53,9 +53,11 @@ class StoreLocator extends HTMLElement {
       // console.log( "my data --> ",storeData[index])
       category.add(storeData[index][1])
     }
+    const innerCat = '<option value="">Select State</option>'
     for (let cat of category) {
-      console.log(cat)
+      innerCat += `<option value="${cat}">${cat}</option>` 
     }
+    console.log(innerCat)
   }
 
   findstatelist(){
