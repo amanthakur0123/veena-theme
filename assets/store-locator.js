@@ -33,7 +33,10 @@ class StoreLocator extends HTMLElement {
     }
 
   sheetData(){
-    console.log("Aman")
+     fetch(this.sheetUrl).
+       then(resp=>resp.json())
+        .then(res=> console.log(res))
+          .catch(err=> console.log(err))
   }
 
   findstatelist(){
