@@ -72,6 +72,13 @@ select:focus-visible{
 }
 
 
+.store-locator .store-location-details{
+  display:flex;
+  max-width:400px;
+  width:100%;
+}
+
+
 
 
 
