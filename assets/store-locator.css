@@ -9,9 +9,16 @@
 
 
 .select-container{
-  display:flex;
+  /* display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:space-between; */
+}
+
+.store-locator label{
+  width:28%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 10px;
 }
 
 .store-locator .select-container select{
