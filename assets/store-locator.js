@@ -57,6 +57,7 @@ class StoreLocator extends HTMLElement {
     for (let cat of category) {
       innerCat += `<option value="${cat}">${cat}</option>` 
     }
+    this.category.innerHtml = innerCat
     console.log(innerCat)
   }
 
