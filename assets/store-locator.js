@@ -59,8 +59,8 @@ class StoreLocator extends HTMLElement {
       for (let st of state) {
         console.log("Aman")
         innerSt += `<option value="${st}">${st}</option>` 
-        console.log(st)
       }
+      console.log(innerSt)
        document.querySelector("#slstate").innerHtml = innerSt
     }
   }
