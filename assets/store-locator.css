@@ -1,4 +1,4 @@
-.store-locator h2{
+.store-locator h2 {
     margin: 0 0 25px;
     padding: 0 10px;
     font-size: 28px;
@@ -8,49 +8,48 @@
 }
 
 
-.select-container{
-   display:flex;
-  margin: 0 -10px 50px;
+.select-container {
+    display: flex;
+    margin: 0 -10px 50px;
 }
 
-.store-locator label{
-  width:28%;
-  display: inline-block;
-  vertical-align: top;
-  padding: 0 10px;
+.store-locator label {
+    width: 28%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 10px;
 }
 
 .store-locator label:nth-child(4) {
     width: 16%;
 }
 
-.store-locator .select-container select{
+.store-locator .select-container select {
     width: 100%;
     height: 55px;
     padding: 0 20px;
     font-size: 16px;
     color: #6f7175;
     font-weight: 400;
-  border:none;
-  background:#ececec;
+    border: none;
+    background: #ececec;
 }
 
-.store-locator .select-container select option{
-  background:#fff;
+.store-locator .select-container select option {
+    background: #fff;
 }
 
-.store-locator .select-container 
-select:focus,
+.store-locator .select-container select:focus,
 select:active,
-select:focus-visible{
-  outline:none;
-  border:none;
-      outline-offset: unset;
+select:focus-visible {
+    outline: none;
+    border: none;
+    outline-offset: unset;
     box-shadow: none;
 }
 
-.store-locator .go-button{
-      background-color: #e85a29;
+.store-locator .go-button {
+    background-color: #e85a29;
     color: #fff;
     font-size: 15px;
     font-weight: 700;
@@ -62,23 +61,23 @@ select:focus-visible{
     cursor: pointer;
     display: block;
     padding: 0;
-  outline:none;
-  border:none;
+    outline: none;
+    border: none;
 }
 
-.store-locator .store-location-details{
-  display:flex;
-  flex-direction:column;
-  max-width:400px;
-  width:100%;
-  box-shadow: 0 0 25px rgba(208, 208, 208, .5);
-  border-radius: 6px;
-  -webkit-border-radius: 6px;
-  overflow: hidden;
+.store-locator .store-location-details {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 0 25px rgba(208, 208, 208, .5);
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    overflow: hidden;
 }
 
-.store-locator .store-location-details .store-name{
-      display: block;
+.store-locator .store-location-details .store-name {
+    display: block;
     padding: 15px 25px;
     background-color: #e85a29;
     font-size: 22px;
@@ -87,49 +86,41 @@ select:focus-visible{
     line-height: 1;
 }
 
-.store-locator .store-location-details .info{
-      padding: 15px 25px 20px;
+.store-locator .store-location-details .info {
+    padding: 15px 25px 20px;
 }
 
-.store-locator .city-state{
-  display: block;
+.store-locator .city-state {
+    display: block;
     color: #e85a29;
     text-transform: uppercase;
 }
 
 
-.store-locator .store-location{
-  border-bottom:2px solid #ccc;
+.store-locator .store-location {
+    border-bottom: 2px solid #ccc;
 }
 
-.store-locator .phone-no  span{
-  color:#000;
-  font-weight:600;
+.store-locator .phone-no span {
+    color: #000;
+    font-weight: 600;
 }
 
-.no-found-message{
-  font-weight:600;
+.no-found-message {
+    font-weight: 600;
 }
 
-@media screen and (max-width:500px){
-  .select-container{
-    flex-direction:column;
-  }
+@media screen and (max-width:500px) {
+    .select-container {
+        flex-direction: column;
+    }
 
-  .store-locator label {
-    width:unset;
-    margin-block: 10px 0;
-  }
+    .store-locator label {
+        width: unset;
+        margin-block: 10px 0;
+    }
 
-  .store-locator label:nth-child(4) {
-    width: unset;
+    .store-locator label:nth-child(4) {
+        width: unset;
+    }
 }
-}
-
-
-
-
-
-
-
-
